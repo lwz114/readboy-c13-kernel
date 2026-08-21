@@ -674,6 +674,7 @@ out:
 	mutex_unlock(&clk_list_lock);
 	return ret;
 }
+#endif
 
 /*
  * Print the names of enabled clocks and their parents if debug_suspend is set
