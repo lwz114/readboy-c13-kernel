@@ -509,6 +509,7 @@ void clk_debug_print_hw(struct clk *clk, struct seq_file *f)
 		base = clk->ops->list_registers(clk, j, &regs, &size);
 	}
 }
+#endif
 
 static int print_hw_show(struct seq_file *m, void *unused)
 {
