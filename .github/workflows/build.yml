@@ -1,0 +1,23 @@
+name: build-c13
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y bc bison flex libssl-dev libelf-dev device-tree-compiler gcc-aarch64-linux-gnu
+      - name: Build
+        run: ./scripts/build-c13.sh
+      - name: Upload kernel artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: readboy-c13-kernel
+          path: |
+            out-c13/arch/arm64/boot/Image.gz
+            out-c13/arch/arm/boot/dts/qcom/msm8996-v3-pmi8996-readboy-c13.dtb
