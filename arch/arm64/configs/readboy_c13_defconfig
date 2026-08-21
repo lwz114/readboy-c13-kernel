@@ -309,6 +309,7 @@ CONFIG_FREEZER=y
 #
 # Platform selection
 #
+CONFIG_ARCH_QCOM=y
 # CONFIG_ARCH_THUNDER is not set
 # CONFIG_ARCH_VEXPRESS is not set
 # CONFIG_ARCH_XGENE is not set
