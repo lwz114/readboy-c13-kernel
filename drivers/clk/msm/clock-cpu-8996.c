@@ -41,9 +41,6 @@
 #include "clock.h"
 #include "vdd-level-8996.h"
 
-/* SCM LMH locking shim for missing definition */
-static DEFINE_MUTEX(scm_lmh_lock);
-
 enum {
 	APC0_PLL_BASE,
 	APC1_PLL_BASE,
