@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y bc bison flex libssl-dev libelf-dev device-tree-compiler gcc-aarch64-linux-gnu
+        run: sudo apt-get update && sudo apt-get install -y bc bison flex libssl-dev libelf-dev device-tree-compiler gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
       - name: Build
         run: ./scripts/build-c13.sh
       - name: Upload kernel artifacts
