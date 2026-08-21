@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y bc bison flex libssl-dev libelf-dev device-tree-compiler gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
+      - name: Fix broken DTS files
+        run: sed -i '/apq8096-v3-pmi8996-mdm9x55-i2s-mtp.dtb/d' arch/arm64/boot/dts/qcom/Makefile
       - name: Build
         run: ./scripts/build-c13.sh
       - name: Upload kernel artifacts
